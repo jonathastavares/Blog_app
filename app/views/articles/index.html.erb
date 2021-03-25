@@ -1,4 +1,8 @@
 <h1>Listing all articles</h1>
+<%= link_to 'Home', root_path %>
+<br>
+<%= link_to 'New Article', new_article_path %>
+<br>
 <table>
  <tr>
   <th>Title</th>
@@ -9,7 +13,8 @@
   <td><%= article.title %></td>
   <td><%= article.description %></td>
   <td><%= link_to 'Edit', edit_article_path(article) %></td>
-  <td><%= link_to 'Show', show_path(article) %></td>
+  <td><%= link_to 'Show', article_path(article) %></td>
+  <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td>
  </tr>
  <% end %>
 </table>
