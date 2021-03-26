@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+    before_action :set_article, only: [:edit, :update, :show, :destroy]
+
     def new
         @article = Article.new
     end
@@ -14,15 +16,12 @@ class ArticlesController < ApplicationController
     end
 
     def show
-        set_article
     end
 
     def edit
-        set_article
     end
 
     def update
-        set_article
         if @article.update(article_params)
             flash[:success]
             redirect_to articles_path(@article)
@@ -37,7 +36,6 @@ class ArticlesController < ApplicationController
     end
 
     def destroy
-        set_article
         @article.destroy
         flash[:success]
         redirect_to articles_path
