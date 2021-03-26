@@ -26,7 +26,7 @@ class ArticlesController < ApplicationController
             flash[:success]
             redirect_to articles_path(@article)
         else
-            flash[:notice] = "Article was not updated"
+            flash[:success]
             render 'edit'
         end
       end
