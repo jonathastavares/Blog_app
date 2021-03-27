@@ -20,7 +20,7 @@
         <% if logged_in? %>
           <li class="btn-danger"><%= link_to "Logout", logout_path, data: { confirm: "Are you sure you want to logout?"} %></li>
         <% else %>
-          <li class="btn"><%= link_to "Login", login_path %></li>
+          <li><%= link_to "Login", login_path %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->

@@ -1,12 +1,13 @@
+require_relative 'users_controller.rb'
 class ArticlesController < ApplicationController
     before_action :set_article, only: [:edit, :update, :show, :destroy]
-
     def new
         @article = Article.new
     end
 
     def create
         @article = Article.new(article_params)
+        @article[:user_id] = session[:user_id]
         if @article.save
             flash[:success] = "Article was created sucessfully!"
             redirect_to article_path(@article)
@@ -42,7 +43,7 @@ class ArticlesController < ApplicationController
 
     private
         def article_params
-            params.require(:article).permit(:title, :description, :user_id)
+            params.require(:article).permit(:title, :description)
         end
 
         def set_article
