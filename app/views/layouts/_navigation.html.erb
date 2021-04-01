@@ -18,9 +18,9 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
-          <li class="btn-danger"><%= link_to "Logout", logout_path, data: { confirm: "Are you sure you want to logout?"} %></li>
+          <li class="btn-outline-danger"><%= link_to "Logout", logout_path, data: { confirm: "Are you sure you want to logout?"} %></li>
         <% else %>
-          <li><%= link_to "Login", login_path %></li>
+          <li class="btn-outline-primary"><%= link_to "Login", login_path %></li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
