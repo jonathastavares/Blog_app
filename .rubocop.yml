@@ -48,5 +48,5 @@ Style/HashTransformKeys:
   Enabled: false
 Style/HashTransformValues:
   Enabled: false
-Layout/EndofLine:
+Layout/EndOfLine:
   Enabled: False
